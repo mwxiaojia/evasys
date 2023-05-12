@@ -208,166 +208,169 @@
 			</section>
 
 			<!-- Forms Section-->
-			<section class="forms">
+			<section class="charts">
 				<div class="container-fluid">
 					<div class="row">
-
-						<!-- Form Elements -->
-						<div class="col-lg-12">
-							<div class="card">
+						<!-- Line Charts-->
+						<div class="col-lg-8">
+							<div class="line-chart-example card">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Line Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="lineChartExample"></canvas>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="line-chart-example card no-margin-bottom">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard2" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Line Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="lineChartExample1"></canvas>
+								</div>
+							</div>
+							<div class="line-chart-example card">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard3" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-body">
+									<canvas id="lineChartExample2"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- Bar Charts-->
+						<div class="col-lg-4">
+							<div class="bar-chart-example card no-margin-bottom">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard4" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Bar Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="barChart1"></canvas>
+								</div>
+							</div>
+							<div class="line-chart-example card">
 								<div class="card-close">
 									<div class="dropdown">
 										<button type="button" id="closeCard5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
 										<div aria-labelledby="closeCard5" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
 									</div>
 								</div>
-
-								<div class="card-header d-flex align-items-center">
-									<h3 class="h4">评价权重计算</h3>
-								</div>
-
 								<div class="card-body">
-									<form class="form-horizontal">
-										<!--    新建评价体系    -->
-										<div>
-											<form class="form-horizontal">
-												<div class="form-group">
-													<input type="submit" value="新建评价体系" class="btn btn-primary">
-												</div>
-											</form>
-										</div>
-
-										<!--    修改评价体系    -->
-										<div>
-											<form class="form-horizontal">
-												<div class="form-group">
-													<input type="submit" value="修改评价体系" class="btn btn-primary">
-												</div>
-											</form>
-										</div>
-										<div class="line"></div>
-										<div class="form-group row">
-											<label class="col-sm-3 form-control-label">评价体系选择</label>
-											<div class="col-sm-9">
-												<select name="account" class="form-control mb-3">
-													<option>综合绩效评价</option>
-													<option>else</option>
-												</select>
-											</div>
-										</div>
-
-										<!--                    <div class="form-group row">-->
-										<!--                      <label class="col-sm-3 form-control-label">评价指标选择</label>-->
-										<!--                    </div>-->
-
-										<div class="line"></div>
-										<div class="form-group row">
-
-											<label class="col-sm-3 form-control-label">人才培养</label>
-											<div class="col-sm-9">
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox1" type="checkbox" value="option1"> 精品课程
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox2" type="checkbox" value="option2"> 交叉学科
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox3" type="checkbox" value="option3"> 自设学科
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox4" type="checkbox" value="option4"> 国际交流
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox5" type="checkbox" value="option5"> 拔尖创新型人才
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox6" type="checkbox" value="option6"> 复合应用型人才
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox7" type="checkbox" value="option7"> 硕博论文数量
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox8" type="checkbox" value="option8"> 本科生就业率
-												</label>
-											</div>
-
-											<label class="col-sm-3 form-control-label">教学资源</label>
-											<div class="col-sm-9">
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox9" type="checkbox" value="option9"> 师资力量
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox10" type="checkbox" value="option10"> 教授授课
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox11" type="checkbox" value="option11"> 院士数量
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox12" type="checkbox" value="option12"> 科研平台
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox13" type="checkbox" value="option13"> 学术期刊
-												</label>
-											</div>
-
-											<label class="col-sm-3 form-control-label">科学研究</label>
-											<div class="col-sm-9">
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox14" type="checkbox" value="option14"> 涉农科技成果
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox15" type="checkbox" value="option15"> 核心期刊论文
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox16" type="checkbox" value="option16"> 新农科项目
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox17" type="checkbox" value="option17"> 国家科技进步奖
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox18" type="checkbox" value="option18"> 省部级奖励
-												</label>
-											</div>
-
-											<label class="col-sm-3 form-control-label">社会声誉</label>
-											<div class="col-sm-9">
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox19" type="checkbox" value="option19"> 实践项目
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox20" type="checkbox" value="option20"> 基金项目
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox21" type="checkbox" value="option21"> 涉农专利
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox22" type="checkbox" value="option22"> 国内声誉
-												</label>
-												<label class="checkbox-inline">
-													<input id="inlineCheckbox23" type="checkbox" value="option23"> 国际声誉
-												</label>
-											</div>
-
-											<div class="line"></div>
-											<div>
-												<form>
-													<div class="form-group">
-														<!--                            <input type="submit" value="提交" class="btn btn-primary">-->
-														<a href="sysinfo.html" class="btn btn-primary">提交</a>
-														<button id="regidter" type="submit" name="SelectsysSubmit" class="btn btn-primary">提交</button>
-													</div>
-												</form>
-											</div>
-										</div>
-
-									</form>
+									<canvas id="barChart2"></canvas>
 								</div>
-
+							</div>
+						</div>
+						<div class="col-lg-8">
+							<div class="bar-chart-example card">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard6" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Bar Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="barChartExample"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- Doughnut Chart -->
+						<div class="col-lg-6">
+							<div class="pie-chart-example card">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard7" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Doughnut  Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="doughnutChartExample"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- Pie Chart -->
+						<div class="col-lg-6">
+							<div class="pie-chart-example card">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard8" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard8" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Pie  Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="pieChartExample"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- Polar Chart-->
+						<div class="col-lg-6">
+							<div class="polar-chart-example card">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard9" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard9" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Polar Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="polarChartExample"></canvas>
+								</div>
+							</div>
+						</div>
+						<!-- Radar Chart-->
+						<div class="col-lg-6">
+							<div class="radar-chart-example card">
+								<div class="card-close">
+									<div class="dropdown">
+										<button type="button" id="closeCard10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard10" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+									</div>
+								</div>
+								<div class="card-header d-flex align-items-center">
+									<h3 class="h4">Radar Chart Example</h3>
+								</div>
+								<div class="card-body">
+									<canvas id="radarChartExample"></canvas>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
+
 			<!-- Page Footer-->
 			<footer class="main-footer">
 				<div class="container-fluid">
