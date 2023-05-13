@@ -3,16 +3,23 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>用户登录</title>
+		<title>密码重置</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta name="robots" content="all,follow">
+		<!-- Bootstrap CSS-->
 		<link rel="stylesheet" href="<?php echo base_url('/public/vendor/bootstrap/css/bootstrap.min.css'); ?>">
+		<!-- Font Awesome CSS-->
 		<link rel="stylesheet" href="<?php echo base_url('/public/vendor/font-awesome/css/font-awesome.min.css'); ?>">
+		<!-- Fontastic Custom icon font-->
 		<link rel="stylesheet" href="<?php echo base_url('/public/css/fontastic.css'); ?>">
+		<!-- Google fonts - Poppins -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+		<!-- theme stylesheet-->
 		<link rel="stylesheet" href="<?php echo base_url('/public/css/style.default.css'); ?>" id="theme-stylesheet">
+		<!-- Custom stylesheet - for your changes-->
 		<link rel="stylesheet" href="<?php echo base_url('/public/css/custom.css'); ?>">
+		<!-- Favicon-->
 		<link rel="shortcut icon" href="<?php echo base_url('/public/images/favicon.ico'); ?>">
 	</head>
 	<body>
@@ -25,37 +32,43 @@
 								<div class="content">
 									<div class="logo">
 										<h1>新农科建设绩效评价系统</h1>
-									</div>
-									<div>
-										<h2 style="font-size:smaller">performance evaluation system for the emerging
-											agricultural education development</h2>
+										<div>
+											<h2 style="font-size:smaller">performance evaluation system for the emerging
+												agricultural education development</h2>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<!-- Form Panel    -->
 						<div class="col-lg-6 bg-white">
 							<div class="form d-flex align-items-center">
 								<div class="content">
-									<form method="post" action="<?php echo site_url('/login'); ?>" class="form-validate">
+									<form class="form-validate" method="post" action="<?php echo site_url('/reg'); ?>">
 										<div class="form-group">
-											<input id="login-username" type="text" name="name" required
-												   data-msg="Please enter your username" class="input-material">
-											<label for="login-username" class="label-material">用户名</label>
+											<input id="reset-username" type="text" name="name" required
+												   data-msg="请输入你的用户名" class="input-material">
+											<label for="reset-username" class="label-material">用户名</label>
 										</div>
 										<div class="form-group">
-											<input id="login-password" type="password" name="pwd" required
+											<input id="reset-email" type="email" name="email" required
+												   data-msg="Please enter a valid email address" class="input-material">
+											<label for="reset-email" class="label-material">邮箱地址</label>
+										</div>
+										<div class="form-group">
+											<input id="reset-password" type="password"
+												   name=confirm_pwd" required
 												   data-msg="Please enter your password" class="input-material">
-											<label for="login-password" class="label-material">密码</label>
+											<label for="reset-password"
+												   class="label-material">密码</label>
 										</div>
 										<div class="form-group">
-											<button id="login" type="submit" class="btn btn-primary col-4 offset-5">&nbsp;登&nbsp;&emsp;&nbsp;录&nbsp;</button>
+											<button id="reset" type="submit"
+													class="btn btn-primary col-4 offset-5">&nbsp;找&nbsp;回&nbsp;密&nbsp;码&nbsp;
+											</button>
 										</div>
 									</form>
-									<a href="<?php echo site_url('/reset') ?>" class="forgot-pass">忘记密码？</a>
-									<br>
-									<small>没有帐户？</small>
-									<a href="<?php echo site_url('/reg') ?>" class="signup">注册</a>
+									<small>已有用户？</small>
+									<a href="<?php echo site_url('/login'); ?>" class="signup">登录</a>
 								</div>
 							</div>
 						</div>
