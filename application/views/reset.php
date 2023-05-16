@@ -43,7 +43,7 @@
 						<div class="col-lg-6 bg-white">
 							<div class="form d-flex align-items-center">
 								<div class="content">
-									<form class="form-validate" method="post" action="<?php echo site_url('/reg'); ?>">
+									<form class="form-validate" method="post" action="<?php echo site_url('/reset'); ?>" >
 										<div class="form-group">
 											<input id="reset-username" type="text" name="name" required
 												   data-msg="请输入你的用户名" class="input-material">
@@ -56,10 +56,17 @@
 										</div>
 										<div class="form-group">
 											<input id="reset-password" type="password"
-												   name=confirm_pwd" required
+												   name="pwd" required
 												   data-msg="Please enter your password" class="input-material">
 											<label for="reset-password"
 												   class="label-material">密码</label>
+										</div>
+										<div class="form-group">
+											<input id="confirm-reset-password" type="password"
+												   name="confirm_pwd" required
+												   data-msg="Please enter your password" class="input-material">
+											<label for="confirm-reset-password"
+												   class="label-material">确认密码</label>
 										</div>
 										<div class="form-group">
 											<button id="reset" type="submit"
@@ -76,7 +83,7 @@
 				</div>
 			</div>
 			<div class="copyrights text-center">
-				<p>Design by Bootstrapious<a target="_blank" href="">Design by Bootstrapious</a></p>
+				<p><a target="_blank" href="">Design by Bootstrapious</a></p>
 			</div>
 		</div>
 		<!-- JavaScript files-->

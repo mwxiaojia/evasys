@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div class="copyrights text-center">
-				<p>Design by Bootstrapious<a target="_blank" href="">Design by Bootstrapious</a></p>
+				<p><a target="_blank" href="">Design by Bootstrapious</a></p>
 			</div>
 		</div>
 		<!-- JavaScript files-->

@@ -46,7 +46,7 @@
 									<form class="form-validate" method="post" action="<?php echo site_url('/reg'); ?>">
 										<div class="form-group">
 											<input id="register-username" type="text" name="name" required
-												   data-msg="" class="input-material">
+												   data-msg="Please enter a username" class="input-material">
 											<label for="register-username" class="label-material">用户名</label>
 										</div>
 										<div class="form-group">
@@ -100,7 +100,7 @@
 				</div>
 			</div>
 			<div class="copyrights text-center">
-				<p>Design by Bootstrapious<a target="_blank" href="">Design by Bootstrapious</a></p>
+				<p><a target="_blank" href="">Design by Bootstrapious</a></p>
 			</div>
 		</div>
 		<!-- JavaScript files-->

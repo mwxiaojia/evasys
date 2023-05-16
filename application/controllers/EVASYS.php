@@ -15,6 +15,9 @@
 			$this->load->model('DB_Model');
 		}
 		
+		/** 登录
+		 * @return void
+		 */
 		public function login(): void {
 			// 判断访问方式是不是POST方式
 			if (!IS_POST) {
@@ -33,7 +36,7 @@
 				$userinfo = $this->DB_Model->select('users', condition: $loginInfo);
 				if ($userinfo != null && count($userinfo[0])) {
 					// 登录信息存在，直接返回主页
-					set_cookie('isLogin', json_encode($userinfo[0]), time() + 60 * 60);
+					setcookie('isLogin', json_encode($userinfo[0]),  time() + 60 * 60);
 					header('Location:' . site_url('/index'));
 				} else {
 					echo "<script>alert('用户名或密码错误，请重试！'); history.go(-1); </script>";
@@ -41,7 +44,10 @@
 			}
 		}
 		
-		public function reg() {
+		/** 注册
+		 * @return void
+		 */
+		public function reg(): void {
 			# 判断访问的方式是不是POST方式
 			if (!IS_POST) {
 				// 非POST访问
@@ -81,7 +87,7 @@
 					$res = $this->DB_Model->insert('users', $regInfo);
 					if ($res) {
 						// 跳转到登录界面
-						echo "<script>alert('用户注册成功，请登录！'); location.href='".site_url('/login')."'; </script>";
+						echo "<script>alert('用户注册成功，请登录！'); window.location.href='".site_url('/login')."'; </script>";
 					} else {
 						echo "<script>alert('用户注册失败，请稍候再试！'); history.go(-1); </script>";
 					}
@@ -89,7 +95,10 @@
 			}
 		}
 		
-		public function reset() {
+		/** 重置密码
+		 * @return void
+		 */
+		public function reset(): void {
 			# 判断访问的方式是不是POST方式
 			if (!IS_POST) {
 				// 非POST访问
@@ -100,22 +109,53 @@
 					$this->load->view('reset');
 				}
 			} else {
-				echo 1;
+				// 获取前端输入的信息
+				$resetInfo = $this->input->post();
+				if ($resetInfo['pwd'] != $resetInfo['confirm_pwd']) {
+					// 两次输入的密码不一致
+					echo "<script>alert('密码输入不一致，重新输入！'); history.go(-1)</script>";
+					exit();
+				} else {
+					// 查询数据库中是否存在当前的用户名和邮箱
+					$condition = array('name'=>$this->input->post('name'), 'email'=>$this->input->post('email'));
+					$userinfo = $this->DB_Model->select('users', condition: $condition);
+					if ($userinfo != null && count($userinfo[0])) {
+						$id = $userinfo[0]['id'];
+						$pwd = $resetInfo['pwd'];
+						$res = $this->DB_Model->update('users', data: array('pwd' => $pwd), condition: array('id' => $id));
+						if ($res) {
+							echo "<script>alert('用户密码重置成功，请登录！');window.location.href='" . site_url('/login') . "'; </script>";
+						} else {
+							echo "<script>alert('用户密码重置失败，请稍后重试！'); history.go(-1); </script>";
+						}
+					}
+				}
 			}
 		}
 		
-		public function index() {
+		/** 访问主页
+		 * @return void
+		 */
+		public function index(): void {
 			# 判断访问的方式是不是POST方式
 			if (!IS_POST) {
 				// 非POST访问
 				if (isset($_COOKIE['isLogin'])) {
-					// 登录状态存在，直接返回主页
-					// 根据账户类型返回相应的界面
-					echo 1;
+					$userinfo = json_decode($_COOKIE['isLogin'], true);
+					// 根据用户类型返回相应的界面
+					header("Location:".site_url('/'.$userinfo['type']));
 				} else {
+					// 登录信息不存在，返回登录界面
 					header("Location:".site_url('/login'));
 				}
 			}
 		}
 		
+		/** 用户退出登录
+		 * @return void
+		 */
+		public function logout(): void {
+			setcookie('isLogin', '', time() - 1);
+			header('Location:' . site_url('/login'));
+		}
     }

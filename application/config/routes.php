@@ -53,7 +53,27 @@
 	$route['404_override'] = '';
 	$route['translate_uri_dashes'] = FALSE;
 	
+	// 基础模块
 	$route['login'] = 'EVASYS/login';
 	$route['reg'] = 'EVASYS/reg';
 	$route['reset'] = 'EVASYS/reset';
 	$route['index'] = 'EVASYS/index';
+	$route['logout'] = 'EVASYS/logout';
+	
+	// 专家模块
+	$route['expert'] = 'ExpertAdmin/index';
+	$route['expert/info'] = 'ExpertAdmin/info';
+	$route['expert/info/update'] = 'ExpertAdmin/info_update';
+	$route['expert/system'] = 'ExpertAdmin/system';
+	$route['expert/aim'] = 'ExpertAdmin/aim';
+	$route['expert/analysis'] = 'ExpertAdmin/analysis';
+	$route['expert/evaluate'] = 'ExpertAdmin/evaluate';
+	$route['expert/test'] = 'ExpertAdmin/test';
+	
+	
+	// 校级管理员模块
+	$route['school'] = 'SchoolAdmin/index';
+	
+	// 系统管理员模块
+	$route['admin'] = 'SystemAdmin/index';
+	
