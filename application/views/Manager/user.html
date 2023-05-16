@@ -42,7 +42,7 @@
 					<!-- Navbar Header-->
 					<div class="navbar-header">
 						<!-- Navbar Brand --><a href="../index.html" class="navbar-brand d-none d-sm-inline-block">
-						<div class="brand-text d-none d-lg-inline-block"><span></span><strong>新农科建设绩效评价系统</strong></div>
+						<div class="brand-text d-none d-lg-inline-block"><span> </span><strong>新农科建设绩效评价系统</strong></div>
 						<div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
 						<!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
 					</div>
@@ -122,14 +122,16 @@
 					<p>**</p>
 				</div>
 			</div>
-			<!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+			<!-- Sidebar Navidation Menus-->
+			<span class="heading">Main</span>
 			<ul class="list-unstyled">
-				<li><a href="user_info.html"> <i class="icon-home"></i>基本信息 </a></li>
-				<li><a href="sys.html"> <i class="icon-padnote"></i>选择评价体系和指标 </a></li>
-				<li><a href="sysinfo.html"> <i class="icon-grid"></i>评价体系和指标信息 </a></li>
-				<li class="active"><a href="eva_experts.html"> <i class="fa fa-bar-chart icon-screen"></i>专家评价 </a></li>
-
+				<li class="active"><a href="user.html"> <i class="icon-home"></i>基本信息 </a></li>
+				<li><a href="uni_info.html"> <i class="icon-padnote"></i>学校信息 </a></li>
+				<li><a href="exp_info.html"> <i class="fa fa-bar-chart icon-screen"></i>专家信息 </a></li>
+				<li><a href="allsysinfo.html"> <i class="icon-grid"></i>评价体系和指标信息 </a></li>
+				<li><a href="manage_info.html"> <i class="icon-grid"></i>评价分析 </a></li>
 				<li><a href="../login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
+
 			</ul>
 			<span class="heading">Extras</span>
 
@@ -138,67 +140,127 @@
 			<!-- Page Header-->
 			<header class="page-header">
 				<div class="container-fluid">
-					<h2 class="no-margin-bottom">专家评价</h2>
+					<h2 class="no-margin-bottom">基本信息</h2>
 				</div>
 			</header>
 			<!-- Breadcrumb-->
 			<div class="breadcrumb-holder container-fluid">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item"><a href="../index.html">主页</a></li>
-					<li class="breadcrumb-item active">专家评价            </li>
+					<li class="breadcrumb-item active">基本信息            </li>
 				</ul>
 			</div>
 			<!-- Forms Section-->
-			<section class="table">
-				<div class="container-fluid">
+			<section class="forms">
+				<div class="container">
 					<div class="row">
+						<!-- Basic Form-->
 						<div class="col-lg-12">
 							<div class="card">
 								<div class="card-close">
 									<div class="dropdown">
 										<button type="button" id="closeCard1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
-										<div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+										<div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>取消</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>编辑</a></div>
 									</div>
 								</div>
 								<div class="card-header d-flex align-items-center">
-									<h3 class="h4">专家评价结果</h3>
+									<h3 class="h4">基本信息</h3>
 								</div>
 								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table">
-											<thead>
-											<tr>
-												<th>评价维度</th>
-												<th>评价结果</th>
-											</tr>
-											</thead>
-											<tbody>
-											<tr>
-												<th scope="row">人才培养情况</th>
-												<td>90</td>
-											</tr>
-											<tr>
-												<th scope="row">教育资源情况</th>
-												<td>80</td>
-											</tr>
-											<tr>
-												<th scope="row">科学研究情况</th>
-												<td>80</td>
-											</tr>
-											<tr>
-												<th scope="row">社会声誉情况</th>
-												<td>80</td>
-											</tr>
-											<tr>
-												<th scope="row">对本系统评价的满意度</th>
-												<td>80</td>
-											</tr>
-											</tbody>
-										</table>
-									</div>
+									<!--                      <p>Lorem ipsum dolor sit amet consectetur.</p>-->
+									<form>
+										<div class="form-group">
+											<label class="form-control-label">用户id:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">姓名:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">邮箱:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">密码:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">用户类型:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">备注:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<!--                        <div class="form-group">-->
+										<!--                          <input type="submit" value="Signin" class="btn btn-primary">-->
+										<!--                        </div>-->
+
+										<div class="col-lg-6">
+											<div class="card-body text-center">
+												<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary"> 修改信息 </button>
+												<!-- Modal-->
+												<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+													<div role="document" class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h4 id="exampleModalLabel" class="modal-title">修改/增加信息</h4>
+																<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+															</div>
+															<div class="modal-body">
+																<!--                                    <p>Lorem ipsum dolor sit amet consectetur.</p>-->
+																<form>
+																	<div class="form-group">
+																		<label class="form-control-label">用户id:</label>
+																		<input type="password" placeholder="用户名" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">姓名:</label>
+																		<input type="password" placeholder="用户名" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">邮箱:</label>
+																		<input type="email" placeholder="邮箱" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">密码:</label>
+																		<input type="password" placeholder="密码" class="form-control">
+																	</div>
+
+																	<div class="form-group">
+																		<label class="form-control-label">备注:</label>
+																		<input type="text" placeholder="备注" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">用户类型：</label>
+																		<div class="col-sm-12">
+																			<select name="account" class="form-control mb-3">
+																				<option>审核专家</option>
+																				<option>校级管理员</option>
+																				<option>系统管理员</option>
+																			</select>
+																		</div>
+																	</div>
+																</form>
+															</div>
+															<div class="modal-footer">
+																<button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
+																<button type="button" class="btn btn-primary">确认</button>
+															</div>
+														</div>
+													</div>
+												</div>
+												<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary"> 增加信息 </button>
+
+											</div>
+										</div>
+
+									</form>
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</section>
