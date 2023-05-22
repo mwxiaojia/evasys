@@ -17,10 +17,12 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
 		<!-- theme stylesheet-->
 		<link rel="stylesheet" href="<?php echo base_url('/public/css/style.default.css'); ?>" id="theme-stylesheet">
+		<link rel="stylesheet" href="<?php echo base_url('/public/vendor/bs-steppe/bs-stepper.min.css'); ?>">
 		<!-- Custom stylesheet - for your changes-->
 		<link rel="stylesheet" href="<?php echo base_url('/public/css/custom.css'); ?>">
 		<!-- Favicon-->
 		<link rel="shortcut icon" href="<?php echo base_url('/public/img/favicon.ico'); ?>">
+		<script src="<?php echo base_url('/public/vendor/jquery/jquery.min.js'); ?>"></script>
 	</head>
 	<body>
 		<div class="page">
@@ -53,13 +55,4 @@
 			</header>
 			<div class="page-content d-flex align-items-stretch">
 				<!-- Side Navbar -->
-				<nav class="side-navbar">
-					<!-- Sidebar Header-->
-					<div class="sidebar-header d-flex align-items-center">
-						<div class="avatar"><img src="<?php echo base_url($userinfo['image']); ?>" alt="..."
-												 class="img-fluid rounded-circle"></div>
-						<div class="title">
-							<h1 class="h4"><?php echo $userinfo['name']; ?></h1>
-							<p><?php echo $userinfo['remarks']; ?></p>
-						</div>
-					</div>
+				

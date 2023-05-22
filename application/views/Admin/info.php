@@ -15,7 +15,6 @@
 					<section class="forms">
 						<div class="container-fluid">
 							<div class="row">
-								<!-- Form Elements -->
 								<div class="col-lg-4 offset-lg-4">
 									<div class="card">
 										<div class="card-close">
@@ -114,7 +113,7 @@
 																	aria-label="Close" class="close"><span
 																	aria-hidden="true">×</span></button>
 														</div>
-														<form class="text-center form-horizontal" method="post" action="<?php echo site_url('/expert/info/update'); ?>">
+														<form class="text-center form-horizontal" method="post" action="<?php echo site_url('/admin/info/update'); ?>">
 															<div class="modal-body">
 																<input type="hidden" name="id"
 																	   value="<?php echo $userinfo['id']; ?>">

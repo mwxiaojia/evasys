@@ -8,19 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="robots" content="all,follow">
 	<!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="../../public/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../../public/vendor/bootstrap/css/bootstrap.min.css">
 	<!-- Font Awesome CSS-->
-	<link rel="stylesheet" href="../../public/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../../../public/vendor/font-awesome/css/font-awesome.min.css">
 	<!-- Fontastic Custom icon font-->
-	<link rel="stylesheet" href="../../public/css/fontastic.css">
+	<link rel="stylesheet" href="../../../../public/css/fontastic.css">
 	<!-- Google fonts - Poppins -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
 	<!-- theme stylesheet-->
-	<link rel="stylesheet" href="../../public/css/style.default.css" id="theme-stylesheet">
+	<link rel="stylesheet" href="../../../../public/css/style.default.css" id="theme-stylesheet">
 	<!-- Custom stylesheet - for your changes-->
-	<link rel="stylesheet" href="../../public/css/custom.css">
+	<link rel="stylesheet" href="../../../../public/css/custom.css">
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="../../public/img/favicon.ico">
+	<link rel="shortcut icon" href="../../../public/img/favicon.ico">
+	<!-- Tweaks for older IEs--><!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <body>
 <div class="page">
@@ -39,7 +42,7 @@
 					<!-- Navbar Header-->
 					<div class="navbar-header">
 						<!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
-						<div class="brand-text d-none d-lg-inline-block"><span></span><strong>新农科建设绩效评价系统</strong></div>
+						<div class="brand-text d-none d-lg-inline-block"><span> </span><strong>新农科建设绩效评价系统</strong></div>
 						<div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
 						<!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
 					</div>
@@ -119,14 +122,14 @@
 					<p>**</p>
 				</div>
 			</div>
-			<!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+			<!-- Sidebar Navidation Menus-->
+			<span class="heading">Main</span>
 			<ul class="list-unstyled">
-				<li><a href="Admin/user.html"> <i class="icon-home"></i>基本信息 </a></li>
-				<li><a href="Admin/university.php"> <i class="icon-padnote"></i>学校信息 </a></li>
-				<li><a href="exp_info.html"> <i class="fa fa-bar-chart icon-screen"></i>专家信息 </a></li>
-				<li class="active"><a href="allsysinfo.html"> <i class="icon-grid"></i>评价体系和指标信息 </a></li>
-				<li><a href="alleva_display.html"> <i class="icon-grid"></i>评价分析 </a></li>
+				<li class="active"><a href="uni_user.html"> <i class="icon-home"></i>基本信息 </a></li>
+				<li><a href="uni_sysinfo.html"> <i class="icon-grid"></i>评价体系和指标信息 </a></li>
+				<li><a href="uni_eva_display.html"> <i class="icon-grid"></i>评价分析 </a></li>
 				<li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
+
 			</ul>
 			<span class="heading">Extras</span>
 
@@ -135,114 +138,127 @@
 			<!-- Page Header-->
 			<header class="page-header">
 				<div class="container-fluid">
-					<h2 class="no-margin-bottom">评价体系</h2>
+					<h2 class="no-margin-bottom">基本信息</h2>
 				</div>
 			</header>
 			<!-- Breadcrumb-->
 			<div class="breadcrumb-holder container-fluid">
 				<ul class="breadcrumb">
 					<li class="breadcrumb-item"><a href="index.html">主页</a></li>
-					<li class="breadcrumb-item active">评价体系            </li>
+					<li class="breadcrumb-item active">基本信息            </li>
 				</ul>
 			</div>
 			<!-- Forms Section-->
 			<section class="forms">
-				<div class="container-fluid">
+				<div class="container">
 					<div class="row">
-
-						<!-- Form Elements -->
+						<!-- Basic Form-->
 						<div class="col-lg-12">
 							<div class="card">
 								<div class="card-close">
 									<div class="dropdown">
-										<button type="button" id="closeCard5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
-										<div aria-labelledby="closeCard5" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>Close</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>Edit</a></div>
+										<button type="button" id="closeCard1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
+										<div aria-labelledby="closeCard1" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item remove"> <i class="fa fa-times"></i>取消</a><a href="#" class="dropdown-item edit"> <i class="fa fa-gear"></i>编辑</a></div>
 									</div>
 								</div>
 								<div class="card-header d-flex align-items-center">
-									<h3 class="h4">添加评价体系和指标</h3>
+									<h3 class="h4">基本信息</h3>
 								</div>
-
 								<div class="card-body">
-									<form class="form-horizontal">
-										<div class="line"></div>
-										<div class="form-group row">
-											<label class="col-sm-3 form-control-label">评价体系名称</label>
-											<div class="col-sm-9">
-												<input type="text" class="form-control">
-											</div>
+									<!--                      <p>Lorem ipsum dolor sit amet consectetur.</p>-->
+									<form>
+										<div class="form-group">
+											<label class="form-control-label">用户id:</label>
+											<p class="form-control-label">***</p>
 										</div>
-										<div class="line"></div>
-										<div>
-											<div class="form-group row">
-												<label class="col-sm-3 form-control-label">评价指标设置</label>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-3 form-control-label">一级指标</label>
-												<div class="col-sm-9">
-													<input type="text" class="form-control">
-												</div>
-												<div style="padding: 10px;"></div>
-												<div class="col-sm-12">
-													<div class="row">
-														<label class="col-sm-3 form-control-label">二级指标</label>
-														<div class="col-md-3">
-															<input type="text" placeholder=".col-md-3" class="form-control">
-														</div>
-														<div class="col-md-3">
-															<input type="text" placeholder=".col-md-3" class="form-control">
-														</div>
-														<div class="col-md-3">
-															<input type="text" placeholder=".col-md-3" class="form-control">
-														</div>
-													</div>
-													<div class="col-sm-12">
-														<div style="padding: 10px;"></div>
-														<div class="row">
-															<label class="col-sm-3 form-control-label"></label>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-														</div>
-													</div>
-													<div class="col-sm-12">
-														<div style="padding: 10px;"></div>
-														<div class="row">
-															<label class="col-sm-3 form-control-label"></label>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-														</div>
-													</div>
-												</div>
+										<div class="form-group">
+											<label class="form-control-label">姓名:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">邮箱:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">密码:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">用户类型:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<div class="form-group">
+											<label class="form-control-label">备注:</label>
+											<p class="form-control-label">***</p>
+										</div>
+										<!--                        <div class="form-group">-->
+										<!--                          <input type="submit" value="Signin" class="btn btn-primary">-->
+										<!--                        </div>-->
 
+										<div class="col-lg-6">
+											<div class="card-body text-center">
+												<button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-primary"> 修改信息 </button>
+												<!-- Modal-->
+												<div id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+													<div role="document" class="modal-dialog">
+														<div class="modal-content">
+															<div class="modal-header">
+																<h4 id="exampleModalLabel" class="modal-title">修改信息</h4>
+																<button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+															</div>
+															<div class="modal-body">
+																<!--                                    <p>Lorem ipsum dolor sit amet consectetur.</p>-->
+																<form>
+																	<div class="form-group">
+																		<label class="form-control-label">用户id:</label>
+																		<input type="password" placeholder="用户名" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">姓名:</label>
+																		<input type="password" placeholder="用户名" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">邮箱:</label>
+																		<input type="email" placeholder="邮箱" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">密码:</label>
+																		<input type="password" placeholder="密码" class="form-control">
+																	</div>
+
+																	<div class="form-group">
+																		<label class="form-control-label">备注:</label>
+																		<input type="text" placeholder="备注" class="form-control">
+																	</div>
+																	<div class="form-group">
+																		<label class="form-control-label">用户类型：</label>
+																		<div class="col-sm-12">
+																			<select name="account" class="form-control mb-3">
+																				<option>审核专家</option>
+																				<option>校级管理员</option>
+																				<option>系统管理员</option>
+																			</select>
+																		</div>
+																	</div>
+																</form>
+															</div>
+															<div class="modal-footer">
+																<button type="button" data-dismiss="modal" class="btn btn-secondary">取消</button>
+																<button type="button" class="btn btn-primary">确认</button>
+															</div>
+														</div>
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="line"></div>
-										<div class="col-sm-5 offset-sm-4">
-											<button type="submit" class="btn btn-secondary">Cancel</button>
-											<button type="submit" class="btn btn-primary">Save changes</button>
 										</div>
 
 									</form>
 								</div>
-
 							</div>
 						</div>
-					</div>
 
+					</div>
+				</div>
 			</section>
 			<!-- Page Footer-->
 			<footer class="main-footer">

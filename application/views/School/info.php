@@ -98,6 +98,27 @@
 													</div>
 												</div>
 											</div>
+											<?php
+												$universityName = '';
+												foreach ($university as $u) {
+													if ($u['id'] == $userinfo['university']) {
+														$universityName =  $u['name'];
+													}
+												}
+											?>
+											<div class="form-group row">
+												<label
+													class="col-sm-4 form-control label-material border-0">所属学校：</label>
+												<div class="col-sm-8">
+													<div class="row">
+														<label>
+															<input type="text" disabled
+																   class="input-material text-center border-0"
+																   value="<?php echo $universityName; ?>">
+														</label>
+													</div>
+												</div>
+											</div>
 											<button type="button" data-toggle="modal" data-target="#myModal"
 													class="btn btn-primary">&nbsp;修&nbsp;&nbsp;改&nbsp;&nbsp;信&nbsp;&nbsp;息&nbsp;
 											</button>
@@ -114,7 +135,7 @@
 																	aria-label="Close" class="close"><span
 																	aria-hidden="true">×</span></button>
 														</div>
-														<form class="text-center form-horizontal" method="post" action="<?php echo site_url('/expert/info/update'); ?>">
+														<form class="text-center form-horizontal" method="post" action="<?php echo site_url('/school/info/update'); ?>">
 															<div class="modal-body">
 																<input type="hidden" name="id"
 																	   value="<?php echo $userinfo['id']; ?>">
@@ -202,6 +223,22 @@
 																					value="admin" <?php echo $userinfo['type'] == 'admin' ? 'selected' : ''; ?>>
 																					系统管理员
 																				</option>
+																			</select>
+																		</div>
+																	</div>
+																</div>
+																<div class="form-group row">
+																	<label
+																		class="col-sm-4 form-control label-material border-0">所属学校：</label>
+																	<div class="col-sm-7">
+																		<div class="row">
+																			<select name="university" class="form-control text-center">
+																				<?php foreach ($university as $u): ?>
+																					<option
+																						value="<?= $u['id'] ?>" <?php echo $u['id'] == $userinfo['university'] ? 'selected' : ''; ?>>
+																						<?= $u['name'] ?>
+																					</option>
+																				<?php endforeach; ?>
 																			</select>
 																		</div>
 																	</div>

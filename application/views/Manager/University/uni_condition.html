@@ -8,19 +8,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="robots" content="all,follow">
 	<!-- Bootstrap CSS-->
-	<link rel="stylesheet" href="../../public/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../../../public/vendor/bootstrap/css/bootstrap.min.css">
 	<!-- Font Awesome CSS-->
-	<link rel="stylesheet" href="../../public/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../../../public/vendor/font-awesome/css/font-awesome.min.css">
 	<!-- Fontastic Custom icon font-->
-	<link rel="stylesheet" href="../../public/css/fontastic.css">
+	<link rel="stylesheet" href="../../../../public/css/fontastic.css">
 	<!-- Google fonts - Poppins -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
 	<!-- theme stylesheet-->
-	<link rel="stylesheet" href="../../public/css/style.default.css" id="theme-stylesheet">
+	<link rel="stylesheet" href="../../../../public/css/style.default.css" id="theme-stylesheet">
 	<!-- Custom stylesheet - for your changes-->
-	<link rel="stylesheet" href="../../public/css/custom.css">
+	<link rel="stylesheet" href="../../../../public/css/custom.css">
 	<!-- Favicon-->
-	<link rel="shortcut icon" href="../../public/img/favicon.ico">
+	<link rel="shortcut icon" href="../../../public/img/favicon.ico">
+	<!-- Tweaks for older IEs--><!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
 </head>
 <body>
 <div class="page">
@@ -38,7 +41,7 @@
 				<div class="navbar-holder d-flex align-items-center justify-content-between">
 					<!-- Navbar Header-->
 					<div class="navbar-header">
-						<!-- Navbar Brand --><a href="index.html" class="navbar-brand d-none d-sm-inline-block">
+						<!-- Navbar Brand --><a href="../index.html" class="navbar-brand d-none d-sm-inline-block">
 						<div class="brand-text d-none d-lg-inline-block"><span></span><strong>新农科建设绩效评价系统</strong></div>
 						<div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div></a>
 						<!-- Toggle Button--><a id="toggle-btn" href="#" class="menu-btn active"><span></span><span></span><span></span></a>
@@ -102,7 +105,7 @@
 							</ul>
 						</li>
 						<!-- Logout    -->
-						<li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
+						<li class="nav-item"><a href="../login.html" class="nav-link logout"> <span class="d-none d-sm-inline">Logout</span><i class="fa fa-sign-out"></i></a></li>
 					</ul>
 				</div>
 			</div>
@@ -121,12 +124,12 @@
 			</div>
 			<!-- Sidebar Navidation Menus--><span class="heading">Main</span>
 			<ul class="list-unstyled">
-				<li><a href="Admin/user.html"> <i class="icon-home"></i>基本信息 </a></li>
-				<li><a href="Admin/university.php"> <i class="icon-padnote"></i>学校信息 </a></li>
-				<li><a href="exp_info.html"> <i class="fa fa-bar-chart icon-screen"></i>专家信息 </a></li>
-				<li class="active"><a href="allsysinfo.html"> <i class="icon-grid"></i>评价体系和指标信息 </a></li>
-				<li><a href="alleva_display.html"> <i class="icon-grid"></i>评价分析 </a></li>
-				<li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
+				<li><a href="uni_user.html"> <i class="icon-home"></i>基本信息 </a></li>
+				<li><a href="selectsys.html"> <i class="icon-grid"></i>评价体系和指标选择 </a></li>
+				<li class="active"><a href="uni_condition.html"> <i class="icon-grid"></i>建设情况录入 </a></li>
+				<li><a href="uni_sysinfo.html"> <i class="icon-grid"></i>权重展示 </a></li>
+				<li><a href="uni_eva_display.html"> <i class="icon-grid"></i>评价分析 </a></li>
+				<li><a href="../login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
 			</ul>
 			<span class="heading">Extras</span>
 
@@ -135,17 +138,17 @@
 			<!-- Page Header-->
 			<header class="page-header">
 				<div class="container-fluid">
-					<h2 class="no-margin-bottom">评价体系</h2>
+					<h2 class="no-margin-bottom">专家评价</h2>
 				</div>
 			</header>
 			<!-- Breadcrumb-->
 			<div class="breadcrumb-holder container-fluid">
 				<ul class="breadcrumb">
-					<li class="breadcrumb-item"><a href="index.html">主页</a></li>
-					<li class="breadcrumb-item active">评价体系            </li>
+					<li class="breadcrumb-item"><a href="../index.html">主页</a></li>
+					<li class="breadcrumb-item active">专家评价            </li>
 				</ul>
 			</div>
-			<!-- Forms Section-->
+			<!-- charts Section-->
 			<section class="forms">
 				<div class="container-fluid">
 					<div class="row">
@@ -160,80 +163,126 @@
 									</div>
 								</div>
 								<div class="card-header d-flex align-items-center">
-									<h3 class="h4">添加评价体系和指标</h3>
+									<h3 class="h4">评价打分</h3>
 								</div>
 
 								<div class="card-body">
 									<form class="form-horizontal">
+
+
 										<div class="line"></div>
 										<div class="form-group row">
-											<label class="col-sm-3 form-control-label">评价体系名称</label>
+											<label class="col-sm-3 form-control-label">选择学校</label>
 											<div class="col-sm-9">
-												<input type="text" class="form-control">
+												<select name="account" class="form-control mb-3">
+													<option>中国农业大学</option>
+													<option>西北农林科技大学</option>
+													<option>华中农业大学</option>
+													<option>华南农业大学</option>
+													<option>南京农业大学</option>
+													<option>北京林业大学</option>
+													<option>四川农业大学</option>
+													<option>else</option>
+												</select>
 											</div>
 										</div>
-										<div class="line"></div>
-										<div>
-											<div class="form-group row">
-												<label class="col-sm-3 form-control-label">评价指标设置</label>
-											</div>
-											<div class="form-group row">
-												<label class="col-sm-3 form-control-label">一级指标</label>
-												<div class="col-sm-9">
-													<input type="text" class="form-control">
-												</div>
-												<div style="padding: 10px;"></div>
-												<div class="col-sm-12">
-													<div class="row">
-														<label class="col-sm-3 form-control-label">二级指标</label>
-														<div class="col-md-3">
-															<input type="text" placeholder=".col-md-3" class="form-control">
-														</div>
-														<div class="col-md-3">
-															<input type="text" placeholder=".col-md-3" class="form-control">
-														</div>
-														<div class="col-md-3">
-															<input type="text" placeholder=".col-md-3" class="form-control">
-														</div>
-													</div>
-													<div class="col-sm-12">
-														<div style="padding: 10px;"></div>
-														<div class="row">
-															<label class="col-sm-3 form-control-label"></label>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-														</div>
-													</div>
-													<div class="col-sm-12">
-														<div style="padding: 10px;"></div>
-														<div class="row">
-															<label class="col-sm-3 form-control-label"></label>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-															<div class="col-md-3">
-																<input type="text" placeholder=".col-md-3" class="form-control">
-															</div>
-														</div>
-													</div>
-												</div>
 
-											</div>
-										</div>
+										<!--                    <div class="form-group row">-->
+										<!--                      <label class="col-sm-3 form-control-label">评价指标选择</label>-->
+										<!--                    </div>-->
+
 										<div class="line"></div>
-										<div class="col-sm-5 offset-sm-4">
-											<button type="submit" class="btn btn-secondary">Cancel</button>
-											<button type="submit" class="btn btn-primary">Save changes</button>
+										<div class="form-group row">
+											<label class="col-sm-8 form-control-label">您认为**大学在新农科建设中 人才培养 方面成果如何？</label>
+											<!--                      <p>可以从精品课程、交叉学科、自设学科、本科生就业率方面进行考虑</p>-->
+<!--											<p>至少备注出一项该方面的建设成果</p>-->
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+											<label class="col-sm-8 form-control-label">至少备注出一项该方面的建设成果</label>
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+											<label class="col-sm-8 form-control-label">至少备注出一项该方面的建设成果</label>
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+
+
+											<div class="line"></div>
+											<label class="col-sm-8 form-control-label">您认为**大学在新农科建设中 教学资源 方面成果如何？</label>
+											<!--                      <p>可以从精品课程、交叉学科、自设学科、本科生就业率方面进行考虑</p>-->
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+
+											<div class="line"></div>
+											<label class="col-sm-8 form-control-label">您认为**大学在新农科建设中 科学研究 方面成果如何？</label>
+											<!--                      <p>可以从精品课程、交叉学科、自设学科、本科生就业率方面进行考虑</p>-->
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+
+											<div class="line"></div>
+											<label class="col-sm-8 form-control-label">您认为**大学在新农科建设中 社会声誉 方面成果如何？</label>
+											<!--                      <p>可以从精品课程、交叉学科、自设学科、本科生就业率方面进行考虑</p>-->
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+
+											<div class="line"></div>
+											<label class="col-sm-8 form-control-label">您认为 **大学 新农科建设 总体成效 如何？</label>
+											<!--                      <p>可以从精品课程、交叉学科、自设学科、本科生就业率方面进行考虑</p>-->
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+
+											<div class="line"></div>
+											<label class="col-sm-8 form-control-label">您对 系统评价的满意度 </label>
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-md-3">
+														<input type="text" placeholder=".col-md-3" class="form-control">
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+										<div class="form-group">
+											<div class="col-sm-5 offset-sm-4">
+												<button type="submit" class="btn btn-secondary">Cancel</button>
+												<button type="submit" class="btn btn-primary"><a href="result_eva_experts.html" class="btn btn-primary">Save changes</a></button>
+											</div>
+
 										</div>
 
 									</form>
@@ -242,8 +291,13 @@
 							</div>
 						</div>
 					</div>
-
+				</div>
 			</section>
+
+
+
+
+
 			<!-- Page Footer-->
 			<footer class="main-footer">
 				<div class="container-fluid">

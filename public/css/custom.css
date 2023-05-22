@@ -1,1 +1,20 @@
 /* your styles go here */
+
+p a, td a, p a:hover, td a:hover, p a:active, td a:active, p a:visited, td a:visited, p a:focus, td a:focus {
+	color: #0069d9;
+	text-decoration: none;
+}
+
+
+a:not([href]):not([class]), a:not([href]):not([class]):hover, a:not([href]):not([class]):visited {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.table thead th, .table tbody td{
+	vertical-align: middle;
+}
+
+td, th {
+	min-width: 130px;
+}

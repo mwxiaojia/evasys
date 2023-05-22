@@ -65,15 +65,41 @@
 	$route['expert/info'] = 'ExpertAdmin/info';
 	$route['expert/info/update'] = 'ExpertAdmin/info_update';
 	$route['expert/system'] = 'ExpertAdmin/system';
-	$route['expert/aim'] = 'ExpertAdmin/aim';
-	$route['expert/analysis'] = 'ExpertAdmin/analysis';
+	$route['expert/system/add'] = 'ExpertAdmin/system_add';
+	$route['expert/system/del'] = 'ExpertAdmin/system_del';
+	$route['expert/system/search'] = 'ExpertAdmin/system_search';
 	$route['expert/evaluate'] = 'ExpertAdmin/evaluate';
+	$route['expert/evaluate/system'] = 'ExpertAdmin/evaluate_system';
+	$route['expert/evaluate/school'] = 'ExpertAdmin/evaluate_school';
+	$route['expert/evaluate/score'] = 'ExpertAdmin/evaluate_score';
 	$route['expert/test'] = 'ExpertAdmin/test';
 	
 	
 	// 校级管理员模块
 	$route['school'] = 'SchoolAdmin/index';
+	$route['school/info'] = 'SchoolAdmin/info';
+	$route['school/info/update'] = 'SchoolAdmin/info_update';
+	$route['school/system'] = 'SchoolAdmin/system';
+	$route['school/system/search'] = 'SchoolAdmin/system_search';
+	$route['school/evaluate'] = 'SchoolAdmin/evaluate';
+	$route['school'] = 'SchoolAdmin/index';
+	$route['school'] = 'SchoolAdmin/index';
+	$route['school'] = 'SchoolAdmin/index';
 	
 	// 系统管理员模块
 	$route['admin'] = 'SystemAdmin/index';
-	
+	$route['admin/info'] = 'SystemAdmin/info';
+	$route['admin/info/update'] = 'SystemAdmin/info_update';
+	$route['admin/university'] = 'SystemAdmin/university';
+	$route['admin/university/add'] = 'SystemAdmin/university_add';
+	$route['admin/university/del'] = 'SystemAdmin/university_del';
+	$route['admin/university/update'] = 'SystemAdmin/university_update';
+	$route['admin/university/search'] = 'SystemAdmin/university_search';
+	$route['admin/user'] = 'SystemAdmin/user';
+	$route['admin/user/del'] = 'SystemAdmin/user_del';
+	$route['admin/user/search'] = 'SystemAdmin/user_search';
+	$route['admin/system'] = 'SystemAdmin/system';
+	$route['admin/system/del'] = 'SystemAdmin/system_del';
+	$route['admin/system/search'] = 'SystemAdmin/system_search';
+	$route['admin/evaluate'] = 'SystemAdmin/evaluate';
+	$route['admin/evaluate/chart'] = 'SystemAdmin/analysis_chart';

@@ -75,8 +75,6 @@
          */
         public function select(string $table, array $select = null, array $condition = null, array $like = null, array $order = null, int $offset = 0, int $limit = -1, bool $distinct = FALSE): array {
 			
-			print_r($condition);
-			
             // 设置查询返回字段
             if (isset($select)) {
                 $select = implode(', ', $select);
