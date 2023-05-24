@@ -245,7 +245,13 @@
 				} else {
 					echo "<script>alert('打分结果保存失败，请稍候再试！');</script>";
 				}
-				//
+				
+				// 获取存储结果
+				$evaluate = $this->DB_Model->select('evaluate', condition: $evaluateInfo, order: array('id'=>"DESC"), limit: 1)[0];
+				
+				// 将存储结果的ID保存到信息中
+				$evaluateInfo['evaluate'] = $evaluate['id'];
+				
 				// 保存评价信息只保存数字
 				$evaluateInfoNum = $this->input->post();
 				// 删除体系ID和学校ID
@@ -325,9 +331,9 @@
 				// 评价体系
 				$data['system'] = $system;
 				// 评价结果
-				$data['evaluateResult'] = $evaluateResult;
+				$data['evaluate'] = $evaluate;
 				// 学校名称
-				$data['university'] = $evaluateResult = $this->DB_Model->select('university', condition: array('id'=>$evaluateResult['university']))[0]['name'];
+				$data['university'] = $this->DB_Model->select('university', condition: array('id'=>$evaluateResult['university']))[0]['name'];
 				
 				$this->load->view('header', $data);
 				$this->load->view('Expert/nav', $data);
@@ -336,16 +342,6 @@
 				
 				
 				
-			} else {
-				header('Location:' . site_url('/login'));
-			}
-		}
-		
-		public function test() {
-			// 判断用户是否登录信息是否存在
-			if (isset($_COOKIE['isLogin'])) {
-				$evaluateResult = $this->DB_Model->select('eva_result', condition: array('id' => 1))[0];
-				echo json_encode(array_keys($evaluateResult));
 			} else {
 				header('Location:' . site_url('/login'));
 			}

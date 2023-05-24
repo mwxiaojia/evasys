@@ -34,9 +34,9 @@
 							<h3 class="h4">评价结果</h3>
 						</div>
 						<div class="card-body">
-							<div class="row" id="box">
+							<div class="row" id="box" style="padding: 0 100px;">
 								<div class="col-sm-12" style="height: 30px;"></div>
-								<div class="col-sm-12"><h6 class="text-center">【<?= $university ?>】评价结果为：<?= $score ?></h6></div>
+								<div class="col-sm-12"><h6 class="text-center">【<?= $university ?>】评价结果为：<?= round($score, 4) ?></h6></div>
 								<div class="col-md-6">
 									<h6 class="text-center">一级指标</h6>
 									<canvas id="pieChartExample"></canvas>
@@ -322,6 +322,10 @@
 					unit: 'pt', // 单位用pt
 					format: 'a4',
 				});
+
+				// 设置页面边距
+				doc.setMargin(100, 30, 100, 30);
+				
 				const a4_width = 595.28; // a4纸的宽度 单位pt
 				const a4_height = 841.89; //  a4纸的高度 单位pt
 				const contentWidth = canvas.width; // 图片实际宽度

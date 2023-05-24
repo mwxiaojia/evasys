@@ -306,12 +306,129 @@
 			}
 		}
  	
-		public function analysis() {
-		
+		public function evaluate() {
+			// 判断用户是否登录信息是否存在
+			if (isset($_COOKIE['isLogin'])) {
+				// 判断访问方式
+				if (!IS_POST) {
+					// 返回选择界面
+					$data['active'] = 'evaluate';
+					// 解码用户信息
+					$data['userinfo'] = json_decode($_COOKIE['isLogin'], true);
+					// 查找体系指标信息
+					$data['university'] = $this->DB_Model->select('university');
+					// 返回前端界面
+					$this->load->view('header', $data);
+					$this->load->view('Admin/nav', $data);
+					$this->load->view('Admin/evaluate', $data);
+					$this->load->view('footer', $data);
+				} else {
+					// 返回结果界面
+					$data['active'] = 'evaluate';
+					
+					// 解码用户信息
+					$userinfo = json_decode($_COOKIE['isLogin'], true);
+					
+					// 返回用户信息
+					$data['userinfo'] = $userinfo;
+					// 查找学校的名称
+					$data['university'] = $this->DB_Model->select('university', condition: array('id'=>$this->input->post('university')))[0]['name'];
+					
+					// 查找属于该用户学校评价结果
+					$eva_result = $this->DB_Model->select('eva_result', condition: array('university' => $this->input->post('university')), order: array('id'=>'ASC'));
+					
+					$trend = array();
+					// 计算每次评价的总分
+					foreach ($eva_result as $num => $value) {
+						// 删除和评价无关的信息
+						unset($value['id'], $value['university'], $value['system'], $value['evaluate']);
+						// 计算总分
+						$trend[$num+1] = array_sum(array_diff($value, [-1]));
+					}
+					
+					$data['trend'] = $trend;
+					/**
+					 *
+					 * 数组 0: array(一级指标相关数据，二级指标相关数据，体系数据，评价结果数据);
+					 *
+					 */
+					
+					$eva_results = array();
+					
+					foreach ($eva_result as $num => $v) {
+						
+						$evaluateResult = $v;
+						
+						// 人才培养
+						$personnelTrain = array('精品课程' => 'ps', '交叉学科' => 'ind', '自设学科' => 'sed', '国际交流' => 'ie', '拔尖创新人才' => 'tit', '复合应用人才' => 'cat', '硕博论文数量' => 'nmdt', '本科生就业率' => 'uer');
+						// 教学资源
+						$teachResources = array('师资质量' => 'qs', '教授授课' => 'tp', '院士数量' => 'na', '科研平台' => 'rp', '学术期刊' => 'aj');
+						// 科学研究
+						$scientificResearch = array('涉农科技成果' => 'asta', '核心期刊论文' => 'cjp', '新农科项目' => 'nasp', '国家科技进步奖' => 'ssta', '省部级奖励' => 'pmlr');
+						// 社会声誉
+						$socialReputation = array('实践项目' => 'pp', '基金项目' => 'fp', '涉农专利' => 'ap', '国内声誉' => 'dr', '国际声誉' => 'ir');
+						// 所有指标
+						$indicators = array('精品课程' => 'ps', '交叉学科' => 'ind', '自设学科' => 'sed', '国际交流' => 'ie', '拔尖创新人才' => 'tit', '复合应用人才' => 'cat', '硕博论文数量' => 'nmdt', '本科生就业率' => 'uer', '师资质量' => 'qs', '教授授课' => 'tp', '院士数量' => 'na', '科研平台' => 'rp', '学术期刊' => 'aj', '涉农科技成果' => 'asta', '核心期刊论文' => 'cjp', '新农科项目' => 'nasp', '国家科技进步奖' => 'ssta', '省部级奖励' => 'pmlr', '实践项目' => 'pp', '基金项目' => 'fp', '涉农专利' => 'ap', '国内声誉' => 'dr', '国际声誉' => 'ir');
+						
+						// 人才培养名称，评分对应
+						foreach ($personnelTrain as $item => $value) {
+							$personnelTrain[$item] = $evaluateResult[$value];
+						}
+						
+						// 教学资源名称，评分对应
+						foreach ($teachResources as $item => $value) {
+							$teachResources[$item] = $evaluateResult[$value];
+						}
+						
+						// 科学研究名称，评分对应
+						foreach ($scientificResearch as $item => $value) {
+							$scientificResearch[$item] = $evaluateResult[$value];
+						}
+						
+						// 社会声誉名称，评分对应
+						foreach ($socialReputation as $item => $value) {
+							$socialReputation[$item] = $evaluateResult[$value];
+						}
+						
+						// 所有指标名称，评分对应
+						foreach ($indicators as $item => $value) {
+							$indicators[$item] = $evaluateResult[$value];
+						}
+						
+						// 删除-1值
+						$personnelTrain = array_diff($personnelTrain, [-1]);
+						$teachResources = array_diff($teachResources, [-1]);
+						$scientificResearch = array_diff($scientificResearch, [-1]);
+						$socialReputation = array_diff($socialReputation, [-1]);
+						$indicators = array_diff($indicators, [-1]);
+						
+						
+						// 首先计算出来所有的值
+						$score = array_sum($indicators);
+						
+						// 一级指标数组
+						$findicators = array('人才培养'=>array_sum($personnelTrain), '教学资源'=>array_sum($teachResources), '科学研究'=>array_sum($scientificResearch), '社会声誉'=>array_sum($socialReputation));
+						
+						// 二级指标
+						$sindicators = $indicators;
+						
+						$system = $this->DB_Model->select('system', condition: array('id'=>$v['system']))[0];
+						
+						$evaluate = $this->DB_Model->select('evaluate', condition: array('id'=>$v['evaluate']))[0];
+						
+						$eva_results[$num+1] = array('score'=>$score, 'findicators'=>$findicators, 'sindicators'=>$sindicators, 'system'=>$system, 'evaluate'=>$evaluate);
+					}
+					
+					$data['eva_results'] = $eva_results;
+					
+					// 返回前端界面
+					$this->load->view('header', $data);
+					$this->load->view('Admin/nav', $data);
+					$this->load->view('Admin/eva_result', $data);
+					$this->load->view('footer', $data);
+				}
+			} else {
+				header('Location:' . site_url('/login'));
+			}
 		}
-		
-		public function analysis_chart() {
-		
-		}
-		
     }

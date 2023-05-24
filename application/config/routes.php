@@ -82,9 +82,6 @@
 	$route['school/system'] = 'SchoolAdmin/system';
 	$route['school/system/search'] = 'SchoolAdmin/system_search';
 	$route['school/evaluate'] = 'SchoolAdmin/evaluate';
-	$route['school'] = 'SchoolAdmin/index';
-	$route['school'] = 'SchoolAdmin/index';
-	$route['school'] = 'SchoolAdmin/index';
 	
 	// 系统管理员模块
 	$route['admin'] = 'SystemAdmin/index';

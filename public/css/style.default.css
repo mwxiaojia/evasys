@@ -1576,6 +1576,10 @@ section.charts div[class*="col-"] {
   padding: 20px;
 }
 
+.chartjs-size-monitor {
+	max-height: 300px;
+}
+
 /*
 * ==========================================================
 *     POLAR CHART
